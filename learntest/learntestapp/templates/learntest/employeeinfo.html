@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Form</title>
+    <script>
+        function toggleForm(formType) {
+            document.getElementById('employee_form').style.display = formType === 'employee' ? 'block' : 'none';
+            document.getElementById('jobseeker_form').style.display = formType === 'jobseeker' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1>Toggle Form</h1>
+    <button onclick="toggleForm('employee')">Employee</button>
+    <button onclick="toggleForm('jobseeker')">Jobseeker</button>
+
+    <form method="post" id="employee_form" style="display: none;">
+        {% csrf_token %}
+        {{ employee_form.as_p }}
+        <button type="submit" name="employee_submit">Save Employee</button>
+    </form>
+
+    <form method="post" id="jobseeker_form" style="display: none;">
+        {% csrf_token %}
+        {{ jobseeker_form.as_p }}
+        <button type="submit" name="jobseeker_submit">Save Jobseeker</button>
+    </form>
+</body>
+</html>

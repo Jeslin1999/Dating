@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Form</title>
+    <script>
+        function toggleForm(formType) {
+            document.getElementById('shortrelationship_form').style.display = formType === 'short' ? 'block' : 'none';
+            document.getElementById('longrelationship_form').style.display = formType === 'long' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1>Toggle Form</h1>
+    <button onclick="toggleForm('short')">Short Term Relationship</button>
+    <button onclick="" disabled>Long Term Relationship</button>
+
+    <div id="shortrelationship_form" style="display:none;">
+        <h2>Short Term Relationship</h2>
+        <form method="post" action="{% url 'learntestapp:relationship' %}">
+            {% csrf_token %}
+            <!-- Add fields for ShortTermRelationship model as necessary -->
+            <button type="submit" name="short_submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="longrelationship_form" style="display:none;">
+        <h2>Long Term Relationship</h2>
+    </div>
+</body>
+</html>
