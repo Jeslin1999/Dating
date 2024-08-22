@@ -618,7 +618,7 @@ header {
 /*---------- end: interest in / jeslin ---------- */
 
 
-/*---------- start: error 404 & 403 / jeslin ---------- */
+/*---------- start: errors / jeslin ---------- */
 
 .error-body {
     height: 100%;
@@ -660,4 +660,4 @@ header {
     color: #4B215F;
 }
 
-/*---------- end: error 404 & 403 / jeslin ---------- */
+/*---------- end: errors / jeslin ---------- */
